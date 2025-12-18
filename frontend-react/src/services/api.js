@@ -1,6 +1,6 @@
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL
 
 const request = async (endpoint, options = {}) => {
   const token = getAuthToken();
@@ -25,18 +25,19 @@ const request = async (endpoint, options = {}) => {
 
 // Auth APIs
 export const login = (credentials) => {
-  return request('/auth/login', {
+  return request('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(credentials),
   });
 };
 
 export const register = (userData) => {
-  return request('/auth/register', {
+  return request('/api/auth/register', {
     method: 'POST',
     body: JSON.stringify(userData),
   });
 };
+
 
 // Admin APIs
 export const getStats = () => request('/admin/stats');
