@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const connectDB = require('../backend/config/db.js');
+const connectDB = require('../backend/src/config/db.js');
 
 // Load env vars
 dotenv.config();
@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Mount routers
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/admin', require('./routes/admin'));
-app.use('/api/user', require('./routes/user'));
+app.use('/api/auth', require('../backend/src/routes/auth.js'));
+app.use('/api/admin', require('../backend/src/routes/admin.js'));
+app.use('/api/user', require('../backend/src/routes/user.js'));
 
 // Root route
 app.get('/', (req, res) => {
