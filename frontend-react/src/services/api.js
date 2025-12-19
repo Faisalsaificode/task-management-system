@@ -41,45 +41,45 @@ export const register = (userData) => {
 
 
 // Admin APIs
-export const getStats = () => request('/admin/stats');
-export const getAllUsers = () => request('/admin/users');
+export const getStats = () => request('/api/admin/stats');
+export const getAllUsers = () => request('/api/admin/users');
 export const createUser = (userData) => {
-  return request('/admin/users', {
+  return request('/api/admin/users', {
     method: 'POST',
     body: JSON.stringify(userData),
   });
 };
 export const updateUser = (id, userData) => {
-  return request(`/admin/users/${id}`, {
+  return request(`/api/admin/users/${id}`, {
     method: 'PUT',
     body: JSON.stringify(userData),
   });
 };
 export const deleteUser = (id) => {
-  return request(`/admin/users/${id}`, { method: 'DELETE' });
+  return request(`/api/admin/users/${id}`, { method: 'DELETE' });
 };
 
-export const getAllTasks = () => request('/admin/tasks');
+export const getAllTasks = () => request('/api/admin/tasks');
 export const createTask = (taskData) => {
-  return request('/admin/tasks', {
+  return request('/api/admin/tasks', {
     method: 'POST',
     body: JSON.stringify(taskData),
   });
 };
 export const updateTask = (id, taskData) => {
-  return request(`/admin/tasks/${id}`, {
+  return request(`/api/admin/tasks/${id}`, {
     method: 'PUT',
     body: JSON.stringify(taskData),
   });
 };
 export const deleteTask = (id) => {
-  return request(`/admin/tasks/${id}`, { method: 'DELETE' });
+  return request(`/api/admin/tasks/${id}`, { method: 'DELETE' });
 };
 
 // User APIs
-export const getMyTasks = () => request('/user/tasks');
+export const getMyTasks = () => request('/api/user/tasks');
 export const updateTaskStatus = (id, status) => {
-  return request(`/user/tasks/${id}`, {
+  return request(`/api/user/tasks/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ status }),
   });
